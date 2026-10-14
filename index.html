@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- GOOGLE ANALYTICS AQUÍ -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#TuVasoAporta | Starbucks Chile</title>
+<meta name="description" content="Trae tu vaso, o llévate el tuyo, y obtén 10% de descuento en tu bebida en Starbucks Chile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde-profundo:#1E3932;
+  --verde:#00704A;
+  --verde-claro:#D4E9E2;
+  --crema:#F2F0EB;
+  --dorado:#CBA258;
+  --texto:#1E3932;
+  --texto-suave:#3B5249;
+  --blanco:#FFFFFF;
+  --radio:20px;
+  --ancho:1120px;
+  --display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --cuerpo:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:var(--cuerpo);font-size:18px;line-height:1.55;color:var(--texto);background:var(--crema)}
+img,svg{max-width:100%}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin:0}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--dorado);outline-offset:3px;border-radius:6px}
+.contenedor{width:100%;max-width:var(--ancho);margin:0 auto;padding:0 24px}
+.salto{position:absolute;left:-999px;top:8px;background:var(--blanco);color:var(--verde-profundo);padding:10px 16px;border-radius:8px;z-index:100;font-weight:700}
+.salto:focus{left:8px}
+.sobretitulo{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--verde);margin-bottom:14px}
+.seccion{padding:88px 0}
+.seccion-cabecera{max-width:680px;margin-bottom:48px}
+.seccion-cabecera h2{font-size:clamp(32px,5vw,48px)}
+.seccion-cabecera p{margin-top:16px;color:var(--texto-suave)}
+
+/* Botones */
+.boton{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 28px;border-radius:999px;font-family:var(--cuerpo);font-size:17px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,background-color .15s ease,color .15s ease}
+.boton:hover{transform:translateY(-2px)}
+.boton-dorado{background:var(--dorado);color:var(--verde-profundo)}
+.boton-dorado:hover{background:#D8B268}
+.boton-verde{background:var(--verde);color:var(--blanco)}
+.boton-verde:hover{background:#005A3B}
+.boton-borde{border-color:var(--crema);color:var(--crema);background:transparent}
+.boton-borde:hover{background:rgba(242,240,235,.12)}
+.boton-borde-oscuro{border-color:var(--verde-profundo);color:var(--verde-profundo);background:transparent}
+.boton-borde-oscuro:hover{background:rgba(30,57,50,.08)}
+
+/* Header */
+header.sitio{position:sticky;top:0;z-index:50;background:var(--crema);border-bottom:1px solid rgba(30,57,50,.12)}
+.header-fila{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo-espacio{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:var(--display);font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--verde);text-decoration:none}
+.logo-espacio .sello{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--verde);color:var(--crema);font-size:18px}
+.header-fila nav{display:flex;align-items:center;gap:28px}
+.header-fila nav a.enlace{font-size:16px;font-weight:500;text-decoration:none;padding:10px 2px}
+.header-fila nav a.enlace:hover{color:var(--verde)}
+.header-fila .boton{min-height:44px;padding:10px 20px;font-size:15px}
+
+/* Hero */
+#hero{background:var(--verde-profundo);color:var(--crema);padding:72px 0 88px;overflow:hidden}
+.hero-grilla{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+#hero h1{font-size:clamp(46px,8vw,92px);letter-spacing:-.035em}
+#hero h1 span{color:var(--dorado)}
+.hero-sub{font-size:clamp(19px,2.4vw,24px);line-height:1.4;margin-top:24px;max-width:520px}
+.hero-sub strong{color:var(--dorado)}
+.hero-acciones{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.hero-nota{margin-top:20px;font-size:14px;color:var(--verde-claro)}
+.hero-arte{display:flex;justify-content:center}
+.hero-arte svg{width:100%;max-width:420px;height:auto}
+
+/* Beneficios */
+#beneficios{background:var(--crema)}
+.tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tarjeta{background:var(--blanco);border-radius:var(--radio);padding:32px 28px;box-shadow:0 2px 0 rgba(30,57,50,.06)}
+.icono{display:grid;place-items:center;width:56px;height:56px;border-radius:16px;background:var(--verde-claro);margin-bottom:22px}
+.icono svg{width:30px;height:30px}
+.tarjeta h3{font-size:26px;margin-bottom:12px}
+.tarjeta p{color:var(--texto-suave);font-size:17px}
+.evidencia{margin-top:32px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--verde);color:var(--blanco);border-radius:var(--radio);padding:36px 40px}
+.evidencia .cifra{font-family:var(--display);font-weight:800;font-size:clamp(40px,6vw,64px);line-height:1;color:var(--dorado);letter-spacing:-.03em}
+.evidencia p{font-size:19px;line-height:1.45}
+.evidencia small{display:block;margin-top:10px;font-size:14px;color:var(--verde-claro)}
+.marca-ejemplo{display:inline-block;background:var(--dorado);color:var(--verde-profundo);font-weight:700;font-size:13px;padding:3px 10px;border-radius:999px;margin-bottom:10px}
+
+/* Como funciona */
+#como-funciona{background:var(--verde-claro)}
+.pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:paso}
+.pasos li{position:relative;background:var(--blanco);border-radius:var(--radio);padding:72px 28px 32px}
+.pasos li::before{counter-increment:paso;content:counter(paso);position:absolute;top:24px;left:28px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--verde-profundo);color:var(--dorado);font-family:var(--display);font-weight:800;font-size:20px}
+.pasos h3{font-size:24px;margin-bottom:10px}
+.pasos p{color:var(--texto-suave);font-size:17px}
+.condiciones{margin-top:32px;background:var(--crema);border:2px dashed var(--verde);border-radius:var(--radio);padding:28px 32px}
+.condiciones h3{font-size:22px;margin-bottom:16px}
+.condiciones dl{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:0}
+.condiciones dt{font-weight:700;color:var(--verde);font-size:15px;letter-spacing:.04em}
+.condiciones dd{margin:4px 0 0;font-size:16px;color:var(--texto-suave)}
+
+/* Vasos */
+#vasos{background:var(--crema)}
+.vasos-grilla{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.vaso-card{background:var(--blanco);border-radius:var(--radio);overflow:hidden;display:flex;flex-direction:column}
+.vaso-visual{display:grid;place-items:center;padding:32px 0 20px;background:var(--verde-claro)}
+.vaso-visual svg{width:120px;height:200px}
+.vaso-card:nth-child(1) .vaso-visual{--c-tapa:#1E3932;--c-cuerpo:#00704A;--c-banda:#CBA258;--c-punto:#F2F0EB;--c-hoja:#00704A}
+.vaso-card:nth-child(2) .vaso-visual{--c-tapa:#1E3932;--c-cuerpo:#F2F0EB;--c-banda:#1E3932;--c-punto:#CBA258;--c-hoja:#1E3932;background:#E6DFC9}
+.vaso-card:nth-child(3) .vaso-visual{--c-tapa:#CBA258;--c-cuerpo:#1E3932;--c-banda:#00704A;--c-punto:#D4E9E2;--c-hoja:#1E3932;background:#C3DDD4}
+.vaso-info{padding:24px 28px 32px;display:flex;flex-direction:column;gap:10px;flex:1}
+.vaso-info h3{font-size:24px}
+.vaso-info p{color:var(--texto-suave);font-size:16px;flex:1}
+.vaso-precio{font-weight:700;font-size:20px;color:var(--verde)}
+.vasos-pie{margin-top:28px;font-size:15px;color:var(--texto-suave)}
+
+/* Cierre */
+#cierre{background:var(--verde-profundo);color:var(--crema);text-align:center;padding:96px 0}
+#cierre h2{font-size:clamp(36px,6vw,64px);max-width:760px;margin:0 auto}
+#cierre h2 span{color:var(--dorado)}
+#cierre p{max-width:560px;margin:20px auto 0;font-size:20px}
+#cierre .boton{margin-top:36px}
+.hashtag{display:block;margin-top:24px;font-weight:700;letter-spacing:.04em;color:var(--verde-claro)}
+
+/* Footer */
+footer.sitio{background:#142922;color:var(--verde-claro);padding:36px 0;font-size:14px}
+.footer-fila{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.footer-fila .logo-espacio{color:var(--verde-claro)}
+.footer-fila .logo-espacio .sello{background:var(--verde-claro);color:var(--verde-profundo)}
+
+/* Responsive */
+@media (max-width:900px){
+  .seccion{padding:64px 0}
+  .hero-grilla{grid-template-columns:1fr}
+  .hero-arte{order:-1}
+  .hero-arte svg{max-width:280px}
+  .tarjetas,.pasos,.vasos-grilla{grid-template-columns:1fr}
+  .condiciones dl{grid-template-columns:1fr}
+  .evidencia{grid-template-columns:1fr;padding:28px}
+  .header-fila nav a.enlace{display:none}
+}
+@media (max-width:480px){
+  body{font-size:17px}
+  .contenedor{padding:0 20px}
+  .hero-acciones .boton{width:100%}
+  .logo-espacio{font-size:17px}
+  .header-fila .boton{padding:10px 16px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .boton{transition:none}
+  .boton:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="salto" href="#beneficios">Saltar al contenido</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="vaso" viewBox="0 0 120 200">
+    <path d="M18 14h84a6 6 0 0 1 6 6v8H12v-8a6 6 0 0 1 6-6z" fill="var(--c-tapa)"/>
+    <path d="M12 30h96l-11 156a8 8 0 0 1-8 7H31a8 8 0 0 1-8-7z" fill="var(--c-cuerpo)"/>
+    <path d="M15 72h90l-3.400 66H18.400z" fill="var(--c-banda)"/>
+    <circle cx="60" cy="105" r="17" fill="var(--c-punto)"/>
+    <path d="M60 94c-9 6-9 18 0 22 9-4 9-16 0-22z" fill="var(--c-hoja)"/>
+  </symbol>
+</svg>
+
+<header class="sitio">
+  <div class="contenedor header-fila">
+    <span class="logo-espacio"><span class="sello" aria-hidden="true">S</span>Starbucks Chile</span>
+    <nav aria-label="Principal">
+      <a class="enlace" href="#beneficios">Beneficios</a>
+      <a class="enlace" href="#como-funciona">Cómo funciona</a>
+      <a class="enlace" href="#vasos">Vasos</a>
+      <a class="boton boton-dorado cta-principal" href="https://www.starbucks.cl" target="_blank" rel="noopener">Encuentra tu tienda</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <section id="hero" aria-labelledby="hero-titulo">
+    <div class="contenedor hero-grilla">
+      <div>
+        <span class="sobretitulo" style="color:var(--dorado)">#TuVasoAporta</span>
+        <h1 id="hero-titulo">Haz que tu café <span>aporte</span></h1>
+        <p class="hero-sub">Trae tu vaso, o llévate el tuyo, y obtén <strong>10% de descuento</strong> en tu bebida.</p>
+        <div class="hero-acciones">
+          <a id="cta-principal" class="boton boton-dorado cta-principal" href="https://www.starbucks.cl" target="_blank" rel="noopener">Encuentra tu Starbucks más cercano</a>
+          <a class="boton boton-borde" href="#como-funciona">Cómo canjear mi descuento</a>
+        </div>
+        <p class="hero-nota">Un gesto simple en tu rutina, un vaso desechable menos.</p>
+      </div>
+      <div class="hero-arte">
+        <svg viewBox="0 0 320 420" role="img" aria-label="Vaso reutilizable con el planeta Tierra dibujado en su costado">
+          <defs>
+            <clipPath id="clip-planeta"><circle cx="160" cy="250" r="62"/></clipPath>
+          </defs>
+          <ellipse cx="160" cy="404" rx="96" ry="10" fill="#000" opacity=".22"/>
+          <path d="M120 40c-14-14 14-22 0-36" fill="none" stroke="#D4E9E2" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+          <path d="M160 40c-14-14 14-22 0-36" fill="none" stroke="#D4E9E2" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+          <path d="M200 40c-14-14 14-22 0-36" fill="none" stroke="#D4E9E2" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+          <path d="M70 66h180a10 10 0 0 1 10 10v22H60V76a10 10 0 0 1 10-10z" fill="#CBA258"/>
+          <path d="M56 98h208l-24 292a14 14 0 0 1-14 12H94a14 14 0 0 1-14-12z" fill="#00704A"/>
+          <path d="M60 150h200l-6 200H66z" fill="#F2F0EB"/>
+          <circle cx="160" cy="250" r="62" fill="#00704A"/>
+          <g clip-path="url(#clip-planeta)">
+            <g fill="none" stroke="#2F8F6B" stroke-width="1.5"><ellipse cx="160" cy="250" rx="62" ry="20"/><ellipse cx="160" cy="250" rx="26" ry="62"/><line x1="160" y1="188" x2="160" y2="312"/><line x1="98" y1="250" x2="222" y2="250"/></g>
+            <g fill="#D4E9E2">
+              <path d="M156 204c10-2 20 6 23 16 7 5 13 12 8 22-3 8-12 14-16 28-4 11-9 19-14 26-3-11 0-22-4-33-4-10-12-17-8-28 1-12 2-24 11-31z"/>
+              <path d="M118 214c10-7 24-4 27 6-6 10-18 13-27 8z"/>
+            </g>
+          </g>
+          <circle cx="160" cy="250" r="62" fill="none" stroke="#1E3932" stroke-width="3"/>
+          <circle cx="262" cy="150" r="7" fill="#CBA258"/>
+          <circle cx="58" cy="120" r="5" fill="#D4E9E2"/>
+          <circle cx="278" cy="214" r="4" fill="#D4E9E2"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="beneficios" class="seccion" aria-labelledby="beneficios-titulo">
+    <div class="contenedor">
+      <div class="seccion-cabecera">
+        <span class="sobretitulo">Beneficios</span>
+        <h2 id="beneficios-titulo">Tu café, con un gesto que suma</h2>
+        <p>Empezar es más simple de lo que parece. Elige la forma que mejor se acomode a tu día.</p>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#00704A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.500"/><circle cx="17" cy="17" r="2.500"/></svg>
+          </div>
+          <h3>10% de descuento</h3>
+          <p>Cada vez que traes tu vaso reutilizable, obtienes un 10% de descuento en tu bebida.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#00704A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l-1.500 12a2 2 0 0 1-2 1.700h-7a2 2 0 0 1-2-1.700z"/><path d="M4 7h16"/><path d="M9 11v4M15 11v4"/></svg>
+          </div>
+          <h3>¿Sin vaso? Llévate el tuyo</h3>
+          <p>Si aún no tienes uno, puedes comprar un vaso reutilizable Starbucks directamente en tu tienda.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#00704A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+          </div>
+          <h3>Un desechable menos</h3>
+          <p>Cada vaso reutilizado es un vaso desechable menos. El cambio parte con un gesto simple en tu rutina.</p>
+        </article>
+      </div>
+
+      <aside class="evidencia" aria-label="Dato de impacto">
+        <div class="cifra" aria-hidden="true">+12.000</div>
+        <div>
+          <p>Más de 12.000 vasos desechables evitados cada mes gracias a clientes que ya piden su bebida en vaso reutilizable.</p>
+          <small>Cifra ilustrativa para fines académicos.</small>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="seccion" aria-labelledby="como-titulo">
+    <div class="contenedor">
+      <div class="seccion-cabecera">
+        <span class="sobretitulo">Cómo funciona</span>
+        <h2 id="como-titulo">Canjea tu descuento en tres pasos</h2>
+        <p>Sin registros ni trámites: solo tú, tu vaso y tu bebida favorita.</p>
+      </div>
+
+      <ol class="pasos">
+        <li>
+          <h3>Ven con tu vaso</h3>
+          <p>Lleva tu vaso reutilizable limpio a tu Starbucks, o cómprate uno de la tienda en el momento.</p>
+        </li>
+        <li>
+          <h3>Pide tu bebida</h3>
+          <p>Cuéntale al equipo que quieres tu café o té en tu vaso reutilizable al hacer tu pedido.</p>
+        </li>
+        <li>
+          <h3>Recibe tu 10%</h3>
+          <p>Se aplica el 10% de descuento a tu bebida. Disfruta tu café sabiendo que aportaste.</p>
+        </li>
+      </ol>
+
+      <div class="condiciones">
+        <h3>Condiciones de la promoción</h3>
+        <dl>
+          <div><dt>VIGENCIA</dt><dd>Del 1 de noviembre de 2026 al 31 de julio de 2027.</dd></div>
+          <div><dt>BEBIDAS INCLUIDAS</dt><dd>Cafés y tés, fríos y calientes, preparados en tienda. No incluye alimentos ni productos embotellados.</dd></div>
+          <div><dt>SUCURSALES</dt><dd>Todas las tiendas Starbucks Chile participantes en el país.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="vasos" class="seccion" aria-labelledby="vasos-titulo">
+    <div class="contenedor">
+      <div class="seccion-cabecera">
+        <span class="sobretitulo">Vasos reutilizables</span>
+        <h2 id="vasos-titulo">¿No tienes vaso? Tenemos el tuyo</h2>
+        <p>Pregunta por los vasos reutilizables Starbucks en tu tienda y empieza hoy mismo.</p>
+      </div>
+
+      <div class="vasos-grilla">
+        <article class="vaso-card">
+          <div class="vaso-visual"><svg viewBox="0 0 120 200" role="img" aria-label="Vaso Clásico Verde"><use href="#vaso"/></svg></div>
+          <div class="vaso-info">
+            <h3>Vaso Clásico Verde</h3>
+            <p>Tu compañero de todos los días. Liviano, con tapa antiderrame y apto para bebidas frías y calientes.</p>
+            <span class="vaso-precio">$12.900</span>
+          </div>
+        </article>
+        <article class="vaso-card">
+          <div class="vaso-visual"><svg viewBox="0 0 120 200" role="img" aria-label="Vaso Térmico Crema"><use href="#vaso"/></svg></div>
+          <div class="vaso-info">
+            <h3>Vaso Térmico Crema</h3>
+            <p>Doble pared que mantiene tu café caliente por más tiempo. Ideal para el trayecto al trabajo o a clases.</p>
+            <span class="vaso-precio">$15.900</span>
+          </div>
+        </article>
+        <article class="vaso-card">
+          <div class="vaso-visual"><svg viewBox="0 0 120 200" role="img" aria-label="Vaso Edición Planeta"><use href="#vaso"/></svg></div>
+          <div class="vaso-info">
+            <h3>Vaso Edición Planeta</h3>
+            <p>Diseño especial de la campaña #TuVasoAporta, con tapa de cierre seguro y base antideslizante.</p>
+            <span class="vaso-precio">$18.900</span>
+          </div>
+        </article>
+      </div>
+      <p class="vasos-pie">Precios en pesos chilenos. Modelos y disponibilidad sujetos a cada tienda. Imágenes referenciales.</p>
+    </div>
+  </section>
+
+  <section id="cierre" aria-labelledby="cierre-titulo">
+    <div class="contenedor">
+      <h2 id="cierre-titulo">Tu próximo café puede <span>aportar</span></h2>
+      <p>Con tu vaso, cada visita suma. Encuentra tu Starbucks más cercano y empieza hoy.</p>
+      <a class="boton boton-dorado cta-principal" href="https://www.starbucks.cl" target="_blank" rel="noopener">Encuentra tu Starbucks más cercano</a>
+      <span class="hashtag">#TuVasoAporta</span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="sitio">
+  <div class="contenedor footer-fila">
+    <span class="logo-espacio"><span class="sello" aria-hidden="true">S</span>Starbucks Chile</span>
+    <p>Campaña #TuVasoAporta · Proyecto académico, cifras y precios ilustrativos · <span id="anio"></span></p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var anio = document.getElementById('anio');
+    if (anio) { anio.textContent = new Date().getFullYear(); }
+  })();
+</script>
+</body>
+</html>
